@@ -12,11 +12,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--dark-bg);
     color: var(--text-light);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -36,6 +41,7 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .logo {
@@ -44,6 +50,7 @@ nav {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    z-index: 1001;
 }
 
 .logo:hover {
@@ -52,6 +59,25 @@ nav {
 
 .code-icon {
     margin-right: 0.5rem;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-light);
+    transition: all 0.3s ease;
 }
 
 .nav-links {
@@ -93,7 +119,7 @@ nav {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 1.5rem;
     line-height: 1.2;
     background: linear-gradient(45deg, var(--primary-color), #00a8ff);
@@ -104,7 +130,7 @@ h1 {
 
 .hero-description {
     color: var(--text-dark);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.8;
     margin-bottom: 2rem;
 }
@@ -136,7 +162,7 @@ h1 {
 }
 
 .stat-item .number {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: bold;
     color: var(--primary-color);
     display: block;
@@ -145,7 +171,7 @@ h1 {
 
 .stat-item p {
     color: var(--text-dark);
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
 /* Profile Image */
@@ -158,8 +184,8 @@ h1 {
 }
 
 .profile-image {
-    width: 400px;
-    height: 400px;
+    width: min(400px, 80vw);
+    height: min(400px, 80vw);
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--primary-color);
@@ -186,7 +212,7 @@ section {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: 3rem;
     color: var(--primary-color);
     text-align: center;
@@ -197,6 +223,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    padding: 0 1rem;
 }
 
 .skill-card {
@@ -215,6 +242,11 @@ h2 {
 .skill-card i {
     font-size: 3rem;
     color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
     margin-bottom: 1rem;
 }
 
@@ -242,21 +274,12 @@ h2 {
     font-size: 0.9rem;
 }
 
-.future-skill {
-    border: 2px dashed rgba(255, 255, 255, 0.1);
-}
-
-.learning-soon {
-    color: var(--text-dark);
-    margin-top: 1rem;
-    font-style: italic;
-}
-
 /* Projects Section */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 0 1rem;
 }
 
 .project-card {
@@ -273,12 +296,13 @@ h2 {
 .project-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .project-card p {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .project-tech {
@@ -316,6 +340,8 @@ h2 {
     max-width: 600px;
     margin: 0 auto 3rem;
     color: var(--text-dark);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding: 0 1rem;
 }
 
 .contact-info {
@@ -324,6 +350,7 @@ h2 {
     gap: 2rem;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .contact-item {
@@ -347,12 +374,15 @@ h2 {
 .contact-item h3 {
     color: var(--text-light);
     margin-bottom: 1rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
 }
 
 .contact-item a {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    word-break: break-word;
 }
 
 .contact-item a:hover {
@@ -365,25 +395,55 @@ footer {
     padding: 2rem;
     background: var(--card-bg);
     margin-top: 5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .profile-image {
-        width: 350px;
-        height: 350px;
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
     }
 
-    h1 {
-        font-size: 3.5rem;
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--dark-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
     }
-}
 
-@media (max-width: 968px) {
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Layout Adjustments */
     #hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 6rem;
+        padding-top: 5rem;
     }
 
     .hero-content {
@@ -392,6 +452,7 @@ footer {
 
     .stats {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .profile-container {
@@ -401,32 +462,50 @@ footer {
     .stat-item::after {
         display: none;
     }
-}
 
-@media (max-width: 480px) {
-    .profile-image {
-        width: 280px;
-        height: 280px;
+    /* Section Padding */
+    section {
+        padding: 4rem 1rem;
     }
 
-    h1 {
-        font-size: 2.5rem;
+    /* Grid Adjustments */
+    .projects-grid,
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .nav-links a {
+        font-size: 1.2rem;
     }
 
     .hero-description {
-        font-size: 1.1rem;
+        padding: 0 1rem;
     }
 
     .stats {
         flex-direction: column;
         gap: 2rem;
+        padding: 0 1rem;
     }
 
+    .project-card,
+    .skill-card,
+    .contact-item {
+        padding: 1.5rem;
+    }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
     .nav-links {
-        gap: 1rem;
+        height: -webkit-fill-available;
     }
+}
 
-    .nav-links a {
-        font-size: 1rem;
-    }
+/* Prevent scrolling when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
 }
