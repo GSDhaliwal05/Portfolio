@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Guransh's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 </head>
 <body>
     <header>
@@ -19,7 +22,6 @@
                 <span></span>
             </div>
             <ul class="nav-links">
-                <!-- Updated 'About' button to point to #hero -->
                 <li><a href="#hero">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -31,10 +33,14 @@
         <section id="hero">
             <div class="hero-content">
                 <div class="intro-text">
-                    <h1>Nice to meet you,<br>I'm Guransh</h1>
+                    <h1>
+                        Nice to meet you,<br />
+                        I'm Guransh
+                    </h1>
                     <p class="hero-description">
-                        I'm a Grade 8 student and aspiring developer with a passion for creating awesome websites. 
-                        With 2 years of experience in HTML and CSS, I love teaching others and bringing creative ideas to life! 
+                        I'm a Grade 8 student and aspiring developer with a passion for
+                        creating awesome websites. With 2 years of experience in HTML and
+                        CSS, I love teaching others and bringing creative ideas to life!
                     </p>
                 </div>
                 <div class="stats">
@@ -50,8 +56,7 @@
             </div>
             <div class="profile-container">
                 <div class="profile-image">
-                    <!-- Replace with your image -->
-                    <img src="profilepicture.jpg" alt="Guransh's Profile">
+                    <img src="profilepicture.jpg" alt="Guransh's Profile" />
                 </div>
             </div>
         </section>
@@ -61,7 +66,11 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Excel Calculator</h3>
-                    <p>A custom Excel calculator for a trucking company that converts kilograms to pounds. Streamlines invoice creation with instant conversions.</p>
+                    <p>
+                        A custom Excel calculator for a trucking company that converts
+                        kilograms to pounds. Streamlines invoice creation with instant
+                        conversions.
+                    </p>
                     <div class="project-tech">
                         <span class="tech-tag">Microsoft Excel</span>
                         <span class="tech-tag">Formulas</span>
@@ -74,7 +83,12 @@
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">CSS</span>
                     </div>
-                    <a href="https://github.com/GSDhaliwal05/Health-Wesbite-7OB" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <a
+                        href="https://github.com/GSDhaliwal05/Health-Wesbite-7OB"
+                        class="github-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
                 </div>
@@ -85,29 +99,54 @@
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">CSS</span>
                     </div>
-                    <a href="https://github.com/GSDhaliwal05/Math-Website-7OB" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <a
+                        href="https://github.com/GSDhaliwal05/Math-Website-7OB"
+                        class="github-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
                 </div>
                 <div class="project-card">
                     <h3>Portfolio Website</h3>
-                    <p>"You're viewing my personal portfolio website — built and hosted right here</p>
+                    <p>
+                        "You're viewing my personal portfolio website — built and hosted
+                        right here
+                    </p>
                     <div class="project-tech">
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">CSS</span>
                         <span class="tech-tag">JS</span>
-                        
                     </div>
-                    <a href="https://github.com/GSDhaliwal05/Portfolio" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <a
+                        href="https://github.com/GSDhaliwal05/Portfolio"
+                        class="github-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
+                </div>
+                <!-- New Clark Project Added Here -->
+                <div class="project-card">
+                    <h3>Clark</h3>
+                    <p>A coupons app currently in progress.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">App Development</span>
+                        <span class="tech-tag">In Progress</span>
+                    </div>
+                    <!-- No GitHub link yet -->
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <p class="contact-intro">Feel free to reach out! I'm always excited to connect with fellow developers.</p>
+            <p class="contact-intro">
+                Feel free to reach out! I'm always excited to connect with fellow
+                developers.
+            </p>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-school"></i>
@@ -129,24 +168,24 @@
 
     <script>
         // Hamburger menu functionality
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.querySelector('.nav-links').classList.toggle('active');
+        document.querySelector(".hamburger").addEventListener("click", function () {
+            this.classList.toggle("active");
+            document.querySelector(".nav-links").classList.toggle("active");
         });
 
         // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.hamburger').classList.remove('active');
-                document.querySelector('.nav-links').classList.remove('active');
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+            link.addEventListener("click", () => {
+                document.querySelector(".hamburger").classList.remove("active");
+                document.querySelector(".nav-links").classList.remove("active");
             });
         });
 
         // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
-                document.querySelector('.hamburger').classList.remove('active');
-                document.querySelector('.nav-links').classList.remove('active');
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest("nav")) {
+                document.querySelector(".hamburger").classList.remove("active");
+                document.querySelector(".nav-links").classList.remove("active");
             }
         });
     </script>
