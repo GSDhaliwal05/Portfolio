@@ -13,6 +13,11 @@
             <a href="#hero" class="logo">
                 <span class="code-icon">&lt;/&gt;</span> Guransh's Portfolio
             </a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -29,7 +34,6 @@
                     <p class="hero-description">
                         I'm a Grade 8 student and aspiring developer with a passion for creating awesome websites. 
                         With 2 years of experience in HTML and CSS, I love teaching others and bringing creative ideas to life! 
-                        Currently, I'm excited to start learning Python and Java to expand my programming skills.
                     </p>
                 </div>
                 <div class="stats">
@@ -51,44 +55,12 @@
             </div>
         </section>
 
-        <section id="skills">
-            <h2>My Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 100%"></div>
-                    </div>
-                    <span class="percentage">100%</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 50%"></div>
-                    </div>
-                    <span class="percentage">50%</span>
-                </div>
-                <div class="skill-card future-skill">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <p class="learning-soon">Learning Soon!</p>
-                </div>
-                <div class="skill-card future-skill">
-                    <i class="fab fa-java"></i>
-                    <h3>Java</h3>
-                    <p class="learning-soon">Learning Soon!</p>
-                </div>
-            </div>
-        </section>
-
         <section id="projects">
             <h2>My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Excel Calculator</h3>
-                    <p>Developed a custom Excel-based calculator for my father to automatically convert kilograms to pounds using the standard conversion formula (kg × 2.20462262). This tool is integrated into his invoice workflow to streamline and speed up the process of generating accurate, professional invoices. I also assist by manually creating these invoices every weekend, ensuring consistent and timely documentation for his business.</p>
+                    <p>A custom Excel calculator for a trucking company that converts kilograms to pounds. Streamlines invoice creation with instant conversions.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Microsoft Excel</span>
                         <span class="tech-tag">Formulas</span>
@@ -132,17 +104,17 @@
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <p class="contact-intro">Feel free to reach out! I'm always excited to connect with fellow developers and potential collaborators.</p>
+            <p class="contact-intro">Feel free to reach out! I'm always excited to connect with fellow developers.</p>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-school"></i>
                     <h3>School Email</h3>
-                    <a href="mailto:861250@pdsb.net" target="_blank" rel="noopener noreferrer">861250@pdsb.net</a>
+                    <a href="mailto:861250@pdsb.net">861250@pdsb.net</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <h3>Personal Email</h3>
-                    <a href="mailto:guranshd007@gmail.com" target="_blank" rel="noopener noreferrer">guranshd007@gmail.com</a>
+                    <a href="mailto:guranshd007@gmail.com">guranshd007@gmail.com</a>
                 </div>
             </div>
         </section>
@@ -151,5 +123,29 @@
     <footer>
         <p>&copy; 2025 Guransh. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Hamburger menu functionality
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('.nav-links').classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
