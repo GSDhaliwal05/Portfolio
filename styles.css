@@ -389,6 +389,13 @@ h2 {
     color: var(--text-light);
 }
 
+/* GitHub item centered below the emails */
+.github-item {
+    grid-column: 1 / -1;   /* spans all columns */
+    justify-self: center;  /* centers block horizontally */
+    max-width: 300px;      /* optional for neatness */
+}
+
 /* Footer */
 footer {
     text-align: center;
