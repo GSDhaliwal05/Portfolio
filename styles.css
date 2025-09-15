@@ -3,6 +3,7 @@
     --dark-bg: #0a192f;
     --text-light: #ffffff;
     --text-dark: #8892b0;
+    --card-bg: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -38,6 +39,9 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .code-icon {
@@ -86,61 +90,24 @@ h1 {
     max-width: 600px;
 }
 
-.stats {
-    display: flex;
-    gap: 3rem;
-    margin-top: 2rem;
-}
-
-.stat-item .number {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-.stat-item p {
-    color: var(--text-dark);
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-circle {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: var(--primary-color);
-    position: relative;
-}
-
-.image-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* Skills Section */
 #skills {
     padding: 5rem 5%;
 }
 
 .skills-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .skill-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
-    flex: 1;
     text-align: center;
+    position: relative;
 }
 
 .skill-card i {
@@ -163,10 +130,103 @@ h1 {
     transition: width 1s ease;
 }
 
-/* Teaching Section */
-#teaching {
+.percentage {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: var(--primary-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.future-skill {
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+.learning-soon {
+    color: var(--text-dark);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Projects Section */
+#projects {
     padding: 5rem 5%;
     background: rgba(255, 255, 255, 0.02);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+    padding: 5rem 5%;
+}
+
+.contact-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: var(--text-dark);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
@@ -198,7 +258,11 @@ footer {
         color: var(--text-light);
     }
 
-    .skills-container {
-        flex-direction: column;
+    .hero-image {
+        margin-top: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
     }
 }
