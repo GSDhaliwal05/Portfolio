@@ -286,44 +286,10 @@ h2 {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease;
-    min-height: 400px; /* ensures all cards are same height */
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-}
-
-.project-card p {
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-/* Projects Section */
-.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.project-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+    grid-template-rows: 1fr auto; /* Ensures equal height for content and footer */
     transition: transform 0.3s ease;
-    min-height: 400px; /* consistent card height */
+    min-height: 400px; /* Optional: Sets a minimum height for uniformity */
 }
 
 .project-card:hover {
@@ -344,10 +310,10 @@ h2 {
 
 /* Footer inside project card for tech tags + links */
 .project-footer {
-    margin-top: auto; /* push footer to bottom */
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* spacing between tech tags row and links row */
+    gap: 0.5rem;
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 
 .project-tech {
@@ -393,6 +359,7 @@ h2 {
         min-height: auto;
     }
 }
+
 
 
 /* Contact Section */
