@@ -274,42 +274,37 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* Projects Section */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
+/* Align tech tags and GitHub/Replit links */
 .project-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-}
-
-.project-card p {
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-.project-tech {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-tech,
+.github-link {
+    margin: 0;
+}
+
+.project-card .project-tech,
+.project-card .github-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.project-card .project-tech {
     gap: 0.5rem;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
+}
+
+.project-card .github-link {
+    margin-left: auto; /* pushes links to the right */
+}
+
+/* Ensure nice alignment row */
+.project-card .project-tech,
+.project-card .github-link {
+    flex: 1 1 auto;
 }
 
 .tech-tag {
