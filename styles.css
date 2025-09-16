@@ -308,21 +308,52 @@ h2 {
     font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-/* Footer inside project card for tech tags + links */
-.project-card section {
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: auto; /* pushes tech tags + links to bottom */
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    min-height: 400px; /* consistent card height */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.project-card p {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Footer inside project card for tech tags + links */
+.project-footer {
+    margin-top: auto; /* push footer to bottom */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* spacing between tech tags row and links row */
 }
 
 .project-tech {
     display: flex;
-    gap: 0.5rem;
     flex-wrap: wrap;
-    margin: 0;
+    gap: 0.5rem;
 }
 
 .tech-tag {
@@ -331,6 +362,11 @@ h2 {
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.9rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
 }
 
 .github-link {
@@ -354,7 +390,7 @@ h2 {
     }
 
     .project-card {
-        min-height: auto; /* let it shrink for small screens */
+        min-height: auto;
     }
 }
 
