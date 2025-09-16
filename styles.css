@@ -274,47 +274,38 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* Align tech tags and GitHub/Replit links */
+/* Project cards stay as boxes */
 .project-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
 
-.project-tech,
-.github-link {
-    margin: 0;
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
-.project-card .project-tech,
-.project-card .github-link {
-    display: inline-flex;
+/* The section inside each project card acts like a footer */
+.project-card section {
+    margin-top: auto; /* pushes footer to bottom */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
     align-items: center;
+    justify-content: flex-start; /* everything stays left */
 }
 
-.project-card .project-tech {
+/* Tech tags */
+.project-tech {
+    display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
 
-.project-card .github-link {
-    margin-left: auto; /* pushes links to the right */
-}
-
-/* Ensure nice alignment row */
-.project-card .project-tech,
-.project-card .github-link {
-    flex: 1 1 auto;
-}
-
-.tech-tag {
-    background: rgba(0, 123, 255, 0.1);
-    color: var(--primary-color);
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
-}
-
+/* GitHub/Replit links */
 .github-link {
     display: inline-flex;
     align-items: center;
