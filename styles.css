@@ -289,6 +289,7 @@ h2 {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
+    min-height: 400px; /* ensures all cards are same height */
 }
 
 .project-card:hover {
@@ -307,21 +308,21 @@ h2 {
     font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-/* Fix for project footer alignment (tech tags + links) */
+/* Footer inside project card for tech tags + links */
 .project-card section {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
     align-items: center;
-    justify-content: flex-start; /* left align everything */
-    margin-top: auto; /* push footer to bottom of card */
+    justify-content: flex-start;
+    margin-top: auto; /* pushes tech tags + links to bottom */
 }
 
 .project-tech {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    margin: 0; /* remove bottom margin */
+    margin: 0;
 }
 
 .tech-tag {
@@ -345,6 +346,18 @@ h2 {
 .github-link:hover {
     color: var(--text-light);
 }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: auto; /* let it shrink for small screens */
+    }
+}
+
 
 /* Contact Section */
 .contact-intro {
