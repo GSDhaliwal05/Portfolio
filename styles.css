@@ -274,7 +274,14 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* Project cards stay as boxes */
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
 .project-card {
     background: var(--card-bg);
     padding: 2rem;
@@ -288,14 +295,26 @@ h2 {
     transform: translateY(-5px);
 }
 
-/* The section inside each project card acts like a footer */
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.project-card p {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Footer section inside project card for alignment */
 .project-card section {
-    margin-top: auto; /* pushes footer to bottom */
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1rem;
+    gap: 0.5rem 1rem; /* spacing between tech tags and links */
     align-items: center;
-    justify-content: flex-start; /* everything stays left */
+    justify-content: flex-start; /* keep everything left */
+    margin-top: auto; /* push to bottom of card */
 }
 
 /* Tech tags */
@@ -303,16 +322,25 @@ h2 {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    margin: 0; /* remove bottom margin so it's inline with links */
 }
 
-/* GitHub/Replit links */
+.tech-tag {
+    background: rgba(0, 123, 255, 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+/* GitHub / Replit links */
 .github-link {
     display: inline-flex;
     align-items: center;
-    color: var(--primary-color);
-    text-decoration: none;
     gap: 0.5rem;
     font-size: 1rem;
+    text-decoration: none;
+    color: var(--primary-color);
     transition: color 0.3s ease;
 }
 
