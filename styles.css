@@ -274,7 +274,7 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* Projects Section - FIXED */
+/* Projects Section */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -286,56 +286,44 @@ h2 {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr auto;
     transition: transform 0.3s ease;
     min-height: 400px;
+    text-align: center; /* Center all content */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
 }
 
-/* Content area - centers the title and description */
-.project-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    flex: 1;
-    gap: 1.5rem;
-    padding: 1rem 0;
-}
-
 .project-card h3 {
     color: var(--primary-color);
-    margin: 0;
+    margin-bottom: 1.5rem; /* Increased spacing */
     font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .project-card p {
     color: var(--text-dark);
-    margin: 0;
+    margin-bottom: 2rem; /* Increased spacing */
     font-size: clamp(0.9rem, 2vw, 1rem);
-    line-height: 1.5;
 }
 
 /* Footer inside project card for tech tags + links */
 .project-footer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    gap: 1rem; /* Increased gap between tech tags and links */
     margin-top: auto;
+    align-items: center; /* Center the footer content */
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    justify-content: center; /* Center tech tags */
+    margin-bottom: 0.5rem; /* Extra space below tech tags */
 }
 
 .tech-tag {
@@ -349,6 +337,7 @@ h2 {
 .project-links {
     display: flex;
     gap: 1rem;
+    justify-content: center; /* Center the links */
 }
 
 .github-link {
