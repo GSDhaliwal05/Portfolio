@@ -300,21 +300,19 @@ h2 {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: clamp(1.2rem, 2vw, 1.5rem);
-    text-align: center; /* Center the title */
 }
 
 .project-card p {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
     font-size: clamp(0.9rem, 2vw, 1rem);
-    text-align: center; /* Center the description */
 }
 
 /* Footer inside project card for tech tags + links */
 .project-footer {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Increased spacing between tech tags and links */
+    gap: 0.5rem;
     margin-top: auto; /* Pushes footer to the bottom */
 }
 
@@ -322,7 +320,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: center; /* Center the tech tags */
 }
 
 .tech-tag {
@@ -336,7 +333,6 @@ h2 {
 .project-links {
     display: flex;
     gap: 1rem;
-    justify-content: center; /* Center the links */
 }
 
 .github-link {
@@ -361,18 +357,10 @@ h2 {
 
     .project-card {
         min-height: auto;
-        padding: 1.5rem;
-    }
-    
-    .project-content {
-        gap: 1rem;
-        padding: 0.5rem 0;
-    }
-    
-    .project-footer {
-        gap: 1rem;
     }
 }
+
+
 
 /* Contact Section */
 .contact-intro {
