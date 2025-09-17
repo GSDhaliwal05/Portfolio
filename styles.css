@@ -287,10 +287,9 @@ h2 {
     padding: 2rem;
     border-radius: 10px;
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr auto; /* Ensures equal height for content and footer */
     transition: transform 0.3s ease;
-    min-height: 400px;
-    text-align: center; /* Center all content */
+    min-height: 400px; /* Optional: Sets a minimum height for uniformity */
 }
 
 .project-card:hover {
@@ -299,31 +298,31 @@ h2 {
 
 .project-card h3 {
     color: var(--primary-color);
-    margin-bottom: 1.5rem; /* Increased spacing */
+    margin-bottom: 1rem;
     font-size: clamp(1.2rem, 2vw, 1.5rem);
+    text-align: center; /* Center the title */
 }
 
 .project-card p {
     color: var(--text-dark);
-    margin-bottom: 2rem; /* Increased spacing */
+    margin-bottom: 1.5rem;
     font-size: clamp(0.9rem, 2vw, 1rem);
+    text-align: center; /* Center the description */
 }
 
 /* Footer inside project card for tech tags + links */
 .project-footer {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Increased gap between tech tags and links */
-    margin-top: auto;
-    align-items: center; /* Center the footer content */
+    gap: 1rem; /* Increased spacing between tech tags and links */
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: center; /* Center tech tags */
-    margin-bottom: 0.5rem; /* Extra space below tech tags */
+    justify-content: center; /* Center the tech tags */
 }
 
 .tech-tag {
